@@ -5,7 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssbeautify = require('gulp-cssbeautify');
 
 gulp.task('styles', function () {
-	gulp.src('./scss/main.sass')
+	gulp.src('./sass/main.sass')
 	.pipe(sass())
 	.pipe(autoprefixer({
 		browsers: ['last 2 versions'],
@@ -26,7 +26,7 @@ gulp.task('serve', function () {
 		}
 	});
 
-	gulp.watch('./scss/*.sass', ['styles']);
+	gulp.watch('./sass/*.sass', ['styles']);
 	gulp.watch('./**/*.html').on('change', browserSync.reload);
 });
 
